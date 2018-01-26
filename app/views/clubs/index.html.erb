@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<body class ="bg-success">
+
+
+<table class="table table-striped bg-info">
+<h1>Kluby</h1>
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Liga</th>
+      <th>Miejsce</th>
+      <th>Budżet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clubs.each do |club| %>
+      <tr>
+        <td><%= club.name %></td>
+        <td><%= club.league %></td>
+        <td><%= club.place %></td>
+        <td><%= club.budget %></td>
+        <td><%= link_to 'Pokaż', club, class:"btn btn-info" %></td>
+        <td><%= link_to 'Edytuj', edit_club_path(club), class:"btn btn-info" %></td>
+        <td><%= link_to 'Usuń', club, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Stwórz nowy klub', new_club_path, class:"btn btn-info" %>
+</body>

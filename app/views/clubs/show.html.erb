@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped bg-info">
+<tr>
+	<td>
+  <strong>Nazwa:</strong>
+  <%= @club.name %>
+</td><td>
+  <strong>Liga:</strong>
+  <%= @club.league %>
+</td><td>
+  <strong>Miejsce:</strong>
+  <%= @club.place %>
+</td><td>
+  <strong>Budżet [mln $]:</strong>
+  <%= @club.budget %>
+</td>
+</tr>
+</table>
+<%= link_to 'Edytuj', edit_club_path(@club) %> |
+<%= link_to 'Wróć', clubs_path %>
